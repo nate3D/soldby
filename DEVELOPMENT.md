@@ -11,11 +11,14 @@ soldby/
 ├── assets/                 # Project assets
 ├── userscript/
 │   ├── img/               # Images (icons, etc.)
+│   ├── gm_config.js       # GM_config library (self-hosted)
 │   ├── README.md          # Userscript-specific documentation
 │   └── soldby.user.js     # Main userscript file
 ├── CHANGELOG.md           # Version history
+├── DEVELOPMENT.md         # This development guide
 ├── LICENSE                # MIT License
-└── README.md              # Main documentation
+├── README.md              # Main documentation
+└── validate.sh            # Validation script
 ```
 
 ## Architecture
@@ -122,7 +125,7 @@ When adding new features:
 
 ## Dependencies
 
-- **GM_config** - Settings UI (from jsDelivr CDN)
+- **GM_config** - Settings UI (hosted in this repository at `userscript/gm_config.js`)
 - **GM.getValue/setValue** - Storage API (provided by userscript manager)
 - **Fetch API** - HTTP requests (native browser API)
 - **DOMParser** - HTML parsing (native browser API)

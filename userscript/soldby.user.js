@@ -30,7 +30,7 @@
 // @match           https://www.amazon.it/*
 // @match           https://www.amazon.nl/*
 // @match           https://www.amazon.se/*
-// @require         https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@master/gm_config.js
+// @require         https://raw.githubusercontent.com/nate3D/soldby/main/userscript/gm_config.js
 // @grant           GM.getValue
 // @grant           GM.setValue
 // @compatible      firefox Tested on Firefox v148 with Violentmonkey v2.19.0 and Tampermonkey v5.3.0

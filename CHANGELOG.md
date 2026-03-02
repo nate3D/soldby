@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.8.0] - 2026-03-02
 
 ### Changed
-- Updated external dependency from openuserjs.org to reliable jsDelivr CDN for GM_config library
+- **Self-hosted GM_config library**: Now hosting GM_config.js directly in this repository instead of using 3rd party CDN
+- Updated @require URL to use GitHub raw URL from this repository
 - Updated browser compatibility information (Firefox v148, Chrome v145)
 - Improved code quality by standardizing variable declarations (const/let instead of var)
 
@@ -20,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Modernized codebase to align with 2026 standards
 - Updated README with current browser versions and compatibility information
 - Added this CHANGELOG to track version history
+- Added comprehensive DEVELOPMENT.md guide for contributors
+- Created validation script for testing
 
 ## [1.7.2] - 2023-11-30
 

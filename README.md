@@ -55,8 +55,9 @@ Since v1.3.0 this issue is addressed by using local storage to cache the results
 
 ## Recent Updates (v1.8.0)
 
-- ✨ Updated external dependency to use reliable jsDelivr CDN
+- 🏠 Self-hosted GM_config library in this repository (no 3rd party dependencies)
 - 🔒 Improved security with proper JSON serialization
 - 🆙 Updated browser compatibility information for 2026
 - 🐛 Fixed deprecated code patterns
 - 📝 Enhanced code quality and maintainability
+- 📚 Added comprehensive documentation (CHANGELOG, DEVELOPMENT guide)
