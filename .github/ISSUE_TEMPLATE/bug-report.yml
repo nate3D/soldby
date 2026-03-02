@@ -28,7 +28,7 @@ body:
     attributes:
       label: SoldBy Version
       description: Which version of SoldBy are you using?
-      placeholder: 1.4.0
+      placeholder: 1.8.0
 
   - type: dropdown
     id: browser
