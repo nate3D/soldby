@@ -11,7 +11,7 @@
 // @description:it  Mostra il nome, il paese di origine e le valutazioni per i venditori di terze parti su Amazon (e mette in evidenza i venditori cinesi)
 // @namespace       https://github.com/tadwohlrapp
 // @author          Tad Wohlrapp
-// @version         1.7.2
+// @version         1.8.0
 // @license         MIT
 // @homepageURL     https://github.com/tadwohlrapp/soldby
 // @supportURL      https://github.com/tadwohlrapp/soldby/issues
@@ -30,11 +30,11 @@
 // @match           https://www.amazon.it/*
 // @match           https://www.amazon.nl/*
 // @match           https://www.amazon.se/*
-// @require         https://openuserjs.org/src/libs/sizzle/GM_config.min.js
+// @require         https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@master/gm_config.js
 // @grant           GM.getValue
 // @grant           GM.setValue
-// @compatible      firefox Tested on Firefox v119 with Violentmonkey v2.16.0, Tampermonkey v4.19.0 and Greasemonkey v4.11
-// @compatible      chrome Tested on Chrome v119 with Violentmonkey v2.16.0 and Tampermonkey v4.19.0
+// @compatible      firefox Tested on Firefox v148 with Violentmonkey v2.19.0 and Tampermonkey v5.3.0
+// @compatible      chrome Tested on Chrome v145 with Violentmonkey v2.19.0 and Tampermonkey v5.3.0
 // ==/UserScript==
 
 (function () {
@@ -135,7 +135,7 @@
         });
         document.onkeydown = function (evt) {
           evt = evt || window.event;
-          var isEscape = false;
+          let isEscape = false;
           if ("key" in evt) isEscape = (evt.key === "Escape" || evt.key === "Esc");
           if (isEscape) GM_config.close();
         };
@@ -361,13 +361,13 @@
 
         if (sellerId) {
           // If seller is known: set ASIN with corresponding seller in local storage
-          localStorage.setItem(asinKey(product), `{"sid":"${sellerId}","sn":"${sellerName}","ts":"${Date.now()}"}`);
+          localStorage.setItem(asinKey(product), JSON.stringify({sid: sellerId, sn: sellerName, ts: Date.now()}));
           // Set data-seller-id attribute
           product.dataset.sellerId = sellerId;
         }
 
         if (sellerName == 'Amazon') {
-          localStorage.setItem(asinKey(product), `{"sn":"${sellerName}","ts":"${Date.now()}"}`);
+          localStorage.setItem(asinKey(product), JSON.stringify({sn: sellerName, ts: Date.now()}));
         }
 
         setSellerDetails(product);
@@ -436,8 +436,7 @@
         product.dataset.sellerRatingCount = seller.rating.count;
 
         // Write to local storage
-        localStorage.setItem(sellerKey(product), `{"c":"${seller.country}","rs":"${seller.rating.score}","rc":"${seller.rating.count}","ts":"${Date.now()}"}`);
-
+        localStorage.setItem(sellerKey(product), JSON.stringify({c: seller.country, rs: seller.rating.score, rc: seller.rating.count, ts: Date.now()}));
         highlightProduct(product);
         populateInfoBox(product);
 

@@ -27,6 +27,13 @@ This script works on all Amazon marketplaces which publish third party seller's 
 - 🇳🇱 amazon.nl
 - 🇸🇪 amazon.se
 
+### Browser Support
+
+Compatible with modern browsers (as of March 2026):
+- **Firefox** v148+ with Violentmonkey v2.19+ or Tampermonkey v5.3+
+- **Chrome** v145+ with Violentmonkey v2.19+ or Tampermonkey v5.3+
+- **Edge**, **Safari**, **Opera**, **Brave** should work with compatible userscript managers
+
 ## Installation
 
 To use userscripts you need to first install a userscript manager. They come as extensions for various browsers:
@@ -45,3 +52,11 @@ After you have installed a userscript manager, head over to [greasyfork.org/scri
 Amazon blocks access to seller profiles after some repeated requests were made (to prevent automated web scraping). The seller profile page then returns a 503 server error which of course prevents the script from parsing the seller details. In this case only the seller name is displayed but at least you still see if a listing is sold by Amazon or by a third party seller. Product pages are not affected by this restriction and can be accessed anytime. After a minute or so the seller profile page is reachable again and the script can continue its work.
 
 Since v1.3.0 this issue is addressed by using local storage to cache the results. This should result in way fewer 503 errors, so make sure to [update to the latest version](https://greasyfork.org/scripts/402064/code/script.user.js 'Update from greasyfork.org')!
+
+## Recent Updates (v1.8.0)
+
+- ✨ Updated external dependency to use reliable jsDelivr CDN
+- 🔒 Improved security with proper JSON serialization
+- 🆙 Updated browser compatibility information for 2026
+- 🐛 Fixed deprecated code patterns
+- 📝 Enhanced code quality and maintainability
