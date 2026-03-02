@@ -27,6 +27,12 @@ This script works on all Amazon marketplaces which publish third party seller's 
 - 🇳🇱 amazon.nl
 - 🇸🇪 amazon.se
 
+### Browser Support (2026)
+
+Compatible with modern browsers:
+- **Firefox** v148+ with Violentmonkey v2.19+ or Tampermonkey v5.3+
+- **Chrome** v145+ with Violentmonkey v2.19+ or Tampermonkey v5.3+
+
 ## Screenshot
 
 <img width="720" alt="Screenshot" src="https://user-images.githubusercontent.com/2788192/171596756-b16fd466-fd5e-4869-95d5-92918cab2a98.png">
@@ -36,3 +42,9 @@ This script works on all Amazon marketplaces which publish third party seller's 
 Amazon blocks access to seller profiles after some repeated requests were made (to prevent automated web scraping). The seller profile page then returns a 503 server error which of course prevents the script from parsing the seller details. In this case only the seller name is displayed but at least you still see if a listing is sold by Amazon or by a third party seller. Product pages are not affected by this restriction and can be accessed anytime. After a minute or so the seller profile page is reachable again and the script can continue its work.
 
 Since v1.3.0 this issue is addressed by using local storage to cache the results. This should result in way fewer 503 errors, so make sure to [update to the latest version](https://greasyfork.org/scripts/402064/code/script.user.js 'Update from greasyfork.org')!
+
+## Version History
+
+See [CHANGELOG.md](../CHANGELOG.md) for detailed version history.
+
+Current version: **1.8.0** (2026-03-02)
